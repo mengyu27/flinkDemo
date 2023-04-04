@@ -3,6 +3,8 @@ package com.lml.transform;
 import cn.hutool.core.util.StrUtil;
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.common.functions.MapFunction;
+import org.apache.flink.api.common.functions.ReduceFunction;
+import org.apache.flink.api.java.functions.KeySelector;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
@@ -33,8 +35,21 @@ public class TransformTest {
                 split.forEach(d -> collector.collect(d));
             }
         });
-        dataLength.print();
-        flatMapStream.print();
+        //reduce使用
+        SingleOutputStreamOperator<String> reduce = dataStream.keyBy(new KeySelector<String, Object>() {
+            @Override
+            public Object getKey(String s) throws Exception {
+                return s;
+            }
+        }).reduce(new ReduceFunction<String>() {
+            @Override
+            public String reduce(String s, String t1) throws Exception {
+                return "t1t1";
+            }
+        });
+        reduce.print();
+//        dataLength.print();
+//        flatMapStream.print();
         env.execute();
     }
 }
