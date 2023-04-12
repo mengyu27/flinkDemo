@@ -32,7 +32,7 @@ public class SourceCustomTest {
         static List<String> idsList = Arrays.asList(IdUtil.nanoId(8), IdUtil.nanoId(8),
                 IdUtil.nanoId(8), IdUtil.nanoId(8), IdUtil.nanoId(8), IdUtil.nanoId(8),
                 IdUtil.nanoId(8), IdUtil.nanoId(8));
-
+        //test
         @Override
         public void run(SourceContext<SensorReading> ctx) throws Exception {
             while (runFlag) {
