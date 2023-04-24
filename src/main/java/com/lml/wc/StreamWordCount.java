@@ -15,7 +15,7 @@ import java.lang.reflect.Parameter;
  **/
 public class StreamWordCount {
     public static void main(String[] args) throws Exception {
-        //获取流处理器运行环境
+        //获取流处理器运行环境 参数
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         //从启动项获取参数 
 //        ParameterTool parameterTool = ParameterTool.fromArgs(args);
