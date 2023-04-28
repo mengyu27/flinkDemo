@@ -15,9 +15,9 @@ import java.lang.reflect.Parameter;
  **/
 public class StreamWordCount {
     public static void main(String[] args) throws Exception {
-        //获取流处理器运行环境
+        //获取流处理器运行环境 参数
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        //从启动项获取参数
+        //从启动项获取参数 
 //        ParameterTool parameterTool = ParameterTool.fromArgs(args);
         DataStreamSource<String> helloTxtStream = env.socketTextStream("192.168.153.132",7777);
         SingleOutputStreamOperator<Tuple2<String, Integer>> sum = helloTxtStream.flatMap(new WordCount.MyFlatMapFunction()).keyBy(new KeySelector<Tuple2<String, Integer>, Object>() {
