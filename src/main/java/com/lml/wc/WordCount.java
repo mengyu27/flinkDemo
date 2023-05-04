@@ -20,6 +20,7 @@ import java.util.List;
  **/
 public class WordCount {
     public static void main(String[] args) throws Exception {
+        System.out.println("---------------------------");
         //创建运行环境
         ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
         DataSource<String> helloTxt = env.readTextFile("E:\\peoject\\flinkDemo\\src\\main\\resources\\hello.txt");
