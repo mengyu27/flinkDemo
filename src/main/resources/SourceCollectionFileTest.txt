@@ -1,4 +1,4 @@
-id=TMZnrGddHy2mddrHzhIbK, timestamp=1639364511000, temperature=36.1
-id=ORm4dJghRj4XMIpJbXvll, timestamp=1639364211000, temperature=22.22
-id=LXNSeWwF3ZXWqK2q0MFgO, timestamp=1639364311000, temperature=12.2
-id=iVcmued_C9HqoLTlIEiQK, timestamp=1639364411000, temperature=42.0
+{"id":"TMZnrGddHy2mddrHzhIbK", "timestamp":1639364511000, "temperature":36.1}
+}{"id":"ORm4dJghRj4XMIpJbXvll", "timestamp":1639364211000, "temperature":22.22}
+{"id":"LXNSeWwF3ZXWqK2q0MFgO", "timestamp":1639364311000, "temperature":12.2}
+}{"id":"iVcmued_C9HqoLTlIEiQK", "timestamp":1639364411000, "temperature":42.0}
