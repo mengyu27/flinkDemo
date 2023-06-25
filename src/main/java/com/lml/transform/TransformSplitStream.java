@@ -3,6 +3,7 @@ package com.lml.transform;
 import cn.hutool.json.JSONUtil;
 import com.lml.apitest.pojo.SensorReading;
 import org.apache.flink.streaming.api.datastream.DataStream;
+import org.apache.flink.streaming.api.datastream.DataStreamSink;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
@@ -18,6 +19,7 @@ public class TransformSplitStream {
         DataStream<String> dataStream = env.readTextFile("E:\\peoject\\flinkDemo\\src\\main\\resources\\SourceCollectionFileTest.txt");
         //转换为对象流
         DataStream<SensorReading> dataStreamMap = dataStream.map(line -> JSONUtil.toBean(line, SensorReading.class));
-//        dataStreamMap.sinkTo()
+//        DataStreamSink<SensorReading> sensorReadingDataStreamSink = dataStreamMap.sinkTo();
+
     }
 }
