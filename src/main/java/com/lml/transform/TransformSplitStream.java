@@ -20,6 +20,7 @@ public class TransformSplitStream {
         //转换为对象流
         DataStream<SensorReading> dataStreamMap = dataStream.map(line -> JSONUtil.toBean(line, SensorReading.class));
 //        DataStreamSink<SensorReading> sensorReadingDataStreamSink = dataStreamMap.sinkTo();
-
+        DataStream<SensorReading> dataStreamMap2 = dataStream.map(line -> JSONUtil.toBean(line, SensorReading.class));
+        System.out.println(dataStreamMap2);
     }
 }
