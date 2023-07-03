@@ -8,6 +8,7 @@ import org.apache.flink.api.java.operators.DataSource;
 import org.apache.flink.api.java.operators.ReduceOperator;
 import org.apache.flink.api.java.operators.SortPartitionOperator;
 import org.apache.flink.api.java.tuple.Tuple2;
+import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.types.StringValue;
 import org.apache.flink.util.Collector;
 
@@ -36,6 +37,7 @@ public class WordCount {
         SortPartitionOperator<Tuple2<String, Integer>> tuple2SortPartitionOperator = wordCount.sortPartition(1, Order.DESCENDING);
         tuple2SortPartitionOperator.print();
         System.out.println("---------------------------");
+
     }
 
     public static class MyFlatMapFunction implements FlatMapFunction<String, Tuple2<String, Integer>> {
@@ -50,5 +52,6 @@ public class WordCount {
             }
         }
     }
+
 
 }
